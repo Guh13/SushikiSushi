@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {  
+    margin: 0;
+    padding: 0;   
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.cabecalho {
+    display: flex;
+    background-color: rgb(227, 122, 10);
+    min-height: 120px;
+}
+
+.cabecalho p {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: 95px;
+    top: 85px;
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 1px;
+}
+
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: auto;
+    position: relative;
+    right: 100px;
+}
+
+.cabecalho nav ul {
+    font-size: larger;
+}
+
+.cabecalho nav li {
+    display: inline-block;
+}
+
+.cabecalho nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: bold;
+}
+
+.cabecalho a:hover {
+    border-bottom: 3px solid rgb(146, 90, 22);
+    border-top: 3px solid rgb(146, 90, 22);
+}
+
+.logo img {
+    max-width: 100px;
+    padding-left: 15px;
+    margin-right: auto;
+}
+
+.container {
+    background-image: url(../img/restaurante1.jpg);
+    min-height: 825px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 2px black;
+   
+}
+
+.container article {
+    width: 80%;
+    margin: auto;
+    padding-top: 250px;
+    color: rgb(255, 255, 255);
+}
+
+.container h1 {
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.container h2 {
+    font-size: 40px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.container p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container a {
+    position: absolute;
+    right: 300px; 
+    border: 2px solid rgb(255, 255, 255);
+    padding: 12px 30px 13px;
+    text-transform: uppercase;
+    color: #ffffff;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    background: none;
+    font-size: 20px;
+}
+
+
+.container a:hover {
+    border: 2px solid rgba(0,0,0,0.5);
+    color: #ffffff;
+}
+
+
+.rodape {
+    color: white;
+    background-color: #434343;
+    text-align: center;
+    padding: 30px ;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 2px;
+}
+
+.rodape img {
+    max-width: 150px;
+}
+
+.unidades {
+    max-width: 60%;
+    margin: auto;
+    color: #575757;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.unidades article {
+    display: inline-block;
+    padding-top: 15px;
+}
+
+.unidades h1 {
+    
+    font-size: 36px;
+    padding: 30px 0;
+}
+
+.unidades h2 {
+    padding-top: 45px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+}
+
+.unidades p {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.unidades img {
+    padding-bottom: 20px;
+    width: 450px;
+    height: 240px;
+}
+.buttom-reserv {
+    
+    border: 2px solid rgba(0,0,0,0.15);
+    padding: 12px 30px 13px;
+    text-transform: uppercase;
+    color: #525252;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    background: none;
+}
+
+.buttom-reserv:hover {
+    background: none;
+    border: 2px solid rgba(0,0,0,0.4);
+    color:  #2d2d2d;
+}
+
+.sobre-sushiki {
+    background-color: #f5f5f5;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-sobre {
+    width: 80%;
+    margin: auto;
+    color: #575757;
+    font-size: 26px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#sobre {
+    width: 80%;
+    margin: auto;
+    color: #575757;
+    display: flex; 
+    margin-top: 20px; 
+    
+}
+
+.texto-sobre{
+    flex-direction: column;
+    
+}
+
+.texto-sobre p{
+    padding-top: 40px;
+}
+
+article#sobre img {
+    max-width: 420px;
+    height: 400px;
+    max-height: 400px;
+    margin-right: 20px; 
+    border-radius: 50%;
+    padding-bottom: 40px;
+    position: relative;
+    bottom: 20px;
+    
+}

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{  
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.cabecalho {
+    display: flex;
+    background-color: rgb(227, 122, 10);
+    min-height: 120px;
+}
+
+.cabecalho p {
+    color: white;
+    position: relative;
+    font-size: 25px;
+    right: 95px;
+    top: 85px;
+    text-shadow: 1px 1px 1px black;
+    letter-spacing: 1px;
+}
+
+.cabecalho nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: auto;
+    position: relative;
+    right: 100px;
+}
+
+.cabecalho nav ul {
+    font-size: larger;
+}
+
+.cabecalho nav li {
+    display: inline-block;
+}
+
+.cabecalho nav li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: bold;
+}
+
+.cabecalho a:hover {
+    border-bottom: 3px solid rgb(146, 90, 22);
+    border-top: 3px solid rgb(146, 90, 22);
+}
+
+.logo img {
+    max-width: 100px;
+    padding-left: 15px;
+    margin-right: auto;
+}
+
+
+
+main{
+    background-image: url(../img/restaurante1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+    max-height: 1118px;
+}
+main img{
+    margin-left: 425px;
+    min-width: 1025px;
+    
+
+
+}
+
+.rodape{    
+    color: white;
+    background-color: #434343;
+    text-align: center;
+    padding: 30px ;
+    text-shadow: 2px 2px 2px black;
+    letter-spacing: 2px;
+}
+
+.rodape img{
+    max-width: 150px;
+}
