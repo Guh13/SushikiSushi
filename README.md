@@ -12,7 +12,7 @@ O site é composto por três páginas principais:
 ## ✨ Link para o Site (GitHub Pages)
 
 Você pode acessar a versão online do site aqui:
-**[Cole o seu link do GitHub Pages aqui depois que ele for publicado]**
+**[https://guh13.github.io/SushikiSushi/]**
 
 ## 🛠️ Tecnologias Utilizadas
 - HTML5
