@@ -1,227 +1,353 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* assets/css/style.css */
 
-* {  
+/* --- 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+/* Variáveis de Cor: facilitam a manutenção do tema */
+:root {
+    --cor-primaria: rgb(227, 122, 10);
+    --cor-primaria-hover: rgb(146, 90, 22);
+    --cor-texto-claro: #ffffff;
+    --cor-texto-escuro: #575757;
+    --cor-fundo-escuro: #434343;
+    --cor-fundo-claro: #f5f5f5;
+}
+
+/* Reset Básico */
+* {
     margin: 0;
-    padding: 0;   
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding e border não alterem a largura final */
     font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    color: var(--cor-texto-escuro);
 }
 
 a {
     text-decoration: none;
+    color: inherit; /* Herda a cor do elemento pai */
 }
 
+img {
+    max-width: 100%; /* Garante que imagens nunca ultrapassem seu container */
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+}
+
+/* --- 2. CABEÇALHO (Reutilizável em todas as páginas) --- */
 .cabecalho {
     display: flex;
-    background-color: rgb(227, 122, 10);
-    min-height: 120px;
+    justify-content: space-between; /* Espaça os itens (logo | nav) */
+    align-items: center;
+    background-color: var(--cor-primaria);
+    padding: 1rem 2rem; /* Espaçamento interno (vertical | horizontal) */
+    min-height: 100px;
 }
 
-.cabecalho p {
-    color: white;
-    position: relative;
-    font-size: 25px;
-    right: 95px;
-    top: 85px;
-    text-shadow: 1px 1px 1px black;
-    letter-spacing: 1px;
-}
-
-.cabecalho nav {
+.logo-container {
     display: flex;
     align-items: center;
-    margin-left: auto; 
-    margin-right: auto;
-    position: relative;
-    right: 100px;
+    gap: 1rem; /* Espaço entre a imagem e o texto do logo */
+}
+
+.logo-container img {
+    width: 80px;
+    height: 80px;
+}
+
+.logo-container p {
+    color: var(--cor-texto-claro);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black;
 }
 
 .cabecalho nav ul {
-    font-size: larger;
+    list-style: none; /* Remove bolinhas da lista */
+    display: flex;
+    gap: 1.5rem; /* Espaço entre os links */
 }
 
-.cabecalho nav li {
-    display: inline-block;
-}
-
-.cabecalho nav li a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    padding: 10px;
+.cabecalho nav a {
+    color: var(--cor-texto-claro);
     font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 3px solid transparent; /* Borda invisível para evitar que o layout pule no hover */
+    transition: border-color 0.3s ease;
 }
 
-.cabecalho a:hover {
-    border-bottom: 3px solid rgb(146, 90, 22);
-    border-top: 3px solid rgb(146, 90, 22);
+.cabecalho nav a:hover {
+    border-bottom-color: var(--cor-primaria-hover);
 }
 
-.logo img {
-    max-width: 100px;
-    padding-left: 15px;
-    margin-right: auto;
-}
-
-.container {
-    background-image: url(../img/restaurante1.jpg);
-    min-height: 825px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    text-shadow: 2px 2px 2px black;
-   
-}
-
-.container article {
-    width: 80%;
-    margin: auto;
-    padding-top: 250px;
-    color: rgb(255, 255, 255);
-}
-
-.container h1 {
-    font-size: 80px;
-    font-weight: bold;
-}
-
-.container h2 {
-    font-size: 40px;
-    padding-bottom: 10px;
-    font-weight: bold;
-}
-
-.container p {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.container a {
-    position: absolute;
-    right: 300px; 
-    border: 2px solid rgb(255, 255, 255);
-    padding: 12px 30px 13px;
-    text-transform: uppercase;
-    color: #ffffff;
-    border-radius: 30px;
-    letter-spacing: 2px;
-    background: none;
-    font-size: 20px;
-}
-
-
-.container a:hover {
-    border: 2px solid rgba(0,0,0,0.5);
-    color: #ffffff;
-}
-
-
+/* --- 3. RODAPÉ (Reutilizável em todas as páginas) --- */
 .rodape {
-    color: white;
-    background-color: #434343;
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-fundo-escuro);
     text-align: center;
-    padding: 30px ;
-    text-shadow: 2px 2px 2px black;
-    letter-spacing: 2px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .rodape img {
-    max-width: 150px;
+    width: 120px;
 }
 
-.unidades {
-    max-width: 60%;
-    margin: auto;
-    color: #575757;
-    padding-bottom: 120px;
-    text-align: center;
-}
+/* --- 4. ESTILOS DA PÁGINA PRINCIPAL (index.html) --- */
 
-.unidades article {
-    display: inline-block;
-    padding-top: 15px;
-}
-
-.unidades h1 {
-    
-    font-size: 36px;
-    padding: 30px 0;
-}
-
-.unidades h2 {
-    padding-top: 45px;
-    font-size: 20px;
-    letter-spacing: 1px;
-    padding-bottom: 5px;
-}
-
-.unidades p {
-    font-size: 15px;
-    padding-bottom: 5px;
-}
-
-.unidades img {
-    padding-bottom: 20px;
-    width: 450px;
-    height: 240px;
-}
-.buttom-reserv {
-    
-    border: 2px solid rgba(0,0,0,0.15);
-    padding: 12px 30px 13px;
-    text-transform: uppercase;
-    color: #525252;
-    border-radius: 30px;
-    letter-spacing: 1px;
-    background: none;
-}
-
-.buttom-reserv:hover {
-    background: none;
-    border: 2px solid rgba(0,0,0,0.4);
-    color:  #2d2d2d;
-}
-
-.sobre-sushiki {
-    background-color: #f5f5f5;
-    
+/* Seção Hero */
+.hero-container {
+    background-image: url('../images/restaurante1.jpg');
+    min-height: 80vh; /* Ocupa 80% da altura da tela */
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-}
-
-.titulo-sobre {
-    width: 80%;
-    margin: auto;
-    color: #575757;
-    font-size: 26px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 40px;
+    color: var(--cor-texto-claro);
+    text-shadow: 2px 2px 4px black;
+    padding: 2rem;
 }
 
-#sobre {
-    width: 80%;
-    margin: auto;
-    color: #575757;
-    display: flex; 
-    margin-top: 20px; 
-    
+.hero-container h1 {
+    font-size: 4rem;
 }
 
-.texto-sobre{
-    flex-direction: column;
-    
+.hero-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.texto-sobre p{
-    padding-top: 40px;
+/* Seção Unidades */
+.unidades-container {
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
-article#sobre img {
-    max-width: 420px;
-    height: 400px;
-    max-height: 400px;
-    margin-right: 20px; 
+.unidades-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.unidades-grid {
+    display: grid;
+    /* Cria colunas responsivas: elas terão no mínimo 350px e se ajustarão para preencher o espaço */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.unidade-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Garante que a imagem não saia do card */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.unidade-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+}
+
+.unidade-info {
+    padding: 1.5rem;
+}
+
+.unidade-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.unidade-info p {
+    line-height: 1.6; /* Melhora a legibilidade */
+    margin-bottom: 1.5rem;
+}
+.botao-reserva-principal {
+    border: 2px solid var(--cor-texto-claro);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block; /* Para o botão não ocupar a largura toda */
+    transition: all 0.3s ease;
+}
+
+.botao-reserva-principal:hover {
+    background-color: var(--cor-fundo-escuro);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-fundo-escuro);
+}
+
+.botao-reserva {
+    border: 2px solid var(--cor-texto-escuro);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block; /* Para o botão não ocupar a largura toda */
+    transition: all 0.3s ease;
+}
+
+.botao-reserva:hover {
+    background-color: var(--cor-texto-escuro);
+    color: var(--cor-texto-claro);
+}
+
+/* Seção Sobre */
+.sobre-container {
+    background-color: var(--cor-fundo-claro);
+    padding: 4rem 2rem;
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+}
+
+.sobre-texto {
+    flex: 1; /* Permite que o texto ocupe o espaço disponível */
+}
+
+.sobre-texto h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.sobre-texto h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+}
+
+.sobre-texto p {
+    line-height: 1.7;
+}
+
+.sobre-imagem img {
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    padding-bottom: 40px;
-    position: relative;
-    bottom: 20px;
+    object-fit: cover;
+}
+
+/* --- 5. ESTILOS DA PÁGINA CARDÁPIO (cardapio.html) --- */
+.cardapio-main {
+    padding: 2rem;
+    background-color: #222; /* Fundo escuro para destacar a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardapio-main img {
+    max-width: 100%;
+    max-height: 100vh; /* Limita a altura máxima à da tela */
+}
+
+/* --- 6. ESTILOS DA PÁGINA RESERVA (reservar.html) --- */
+
+/* --- 7. RESPONSIVIDADE (Media Queries) --- */
+@media (max-width: 768px) {
+    /* Ajustes para tablets e celulares */
+
+    .cabecalho {
+        flex-direction: column; /* Empilha o logo e a navegação */
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .hero-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .sobre-content {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para celulares pequenos */
+
+    .unidades-grid {
+        /* Para telas muito pequenas, forçamos uma única coluna */
+        grid-template-columns: 1fr;
+    }
     
+    .logo-container p {
+        display: none; /* Esconde o texto "Sushiki" no cabeçalho para economizar espaço */
+    }
+}
+
+.reserva-container {
+    max-width: 1100px; /* Limita a largura do conteúdo */
+    margin: 0 auto; /* Centraliza na página */
+    padding: 4rem 2rem; /* Espaçamento interno */
+    text-align: center;
+}
+
+.reserva-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.reserva-container p {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 3rem;
+}
+
+.reserva-grid {
+    display: grid;
+    /* Grid responsivo: cria colunas de no mínimo 250px */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* Espaço entre os cards */
+}
+
+.reserva-unidade-link {
+    display: block; /* Faz o link se comportar como um bloco */
+    padding: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* --- Efeitos Interativos para a Página de Reserva --- */
+
+.reserva-unidade-link {
+    /* ... (estilos que já estavam lá: display, padding, border, etc.) */
+    text-align: center;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-texto-claro);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Sombra suave inicial */
+    transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+}
+
+.reserva-unidade-link:hover {
+    transform: translateY(-8px); /* Eleva o card em 8 pixels */
+    border-color: var(--cor-primaria); /* Muda a cor da borda para a cor principal do site */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Sombra mais pronunciada */
+}
+
+.reserva-unidade-link h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.reserva-unidade-link p {
+    color: #888;
 }

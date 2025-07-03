@@ -3,50 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/reserva.css">
-    <title>Sushiki reserva</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Reserva - Sushiki Sushi</title>
 </head>
 <body>
-    <section>
+    <header class="cabecalho">
+        <a href="index.html" class="logo-container">
+            <img src="assets/images/logo.png" alt="Sushiki Sushi Logo">
+            <p>Sushiki</p>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html#sobre">O Sushiki</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="index.html#unidades">Unidades</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="rest">
-        <img src="assets/images/logo.png" alt="">
-    </div>
+    <main>
+        <div class="reserva-container">
+            <h1>Faça sua Reserva</h1>
+            <p>Selecione uma de nossas unidades abaixo para continuar.</p>
 
-        <div class="logo">
-        <img src="assets/images/logo.png" alt="">
-         </div>
-
-        <div class="select-city">
-        <h1>Qual é a unidade Sushiki de sua preferência?</h1>
-
-        <select name="cidade" id="">
-            <option  value="São Paulo - SP">São Paulo - SP</option>
-            <option  value="all">Selecione uma cidade</option>
-        </select>
-        </div>
-
-        <div class="unidades">
-            <div class="unidade jardins">
-                <h1>Sushiki Jardins</h1>
-                <p>São Paulo - SP</p>
-            </div>
-
-            <div class="unidade Morumbi">
-                <h1>Sushiki Morumbi</h1>
-                <p>São Paulo - SP</p>
-            </div>
-
-            <div class="unidade ShoppingCenter3">
-                <h1>Sushiki Shopping Center 3</h1>
-                <p>São Paulo - SP</p>
-            </div>
-
-            <div class="unidade VilaMariana">
-                <h1>Sushiki Vila Mariana</h1>
-                <p>São Paulo - SP</p>
+            <div class="reserva-grid">
+                <a href="#" class="reserva-unidade-link">
+                    <h2>Sushiki Jardins</h2>
+                    <p>São Paulo - SP</p>
+                </a>
+                <a href="#" class="reserva-unidade-link">
+                    <h2>Sushiki Morumbi</h2>
+                    <p>São Paulo - SP</p>
+                </a>
+                <a href="#" class="reserva-unidade-link">
+                    <h2>Sushiki Shopping Center 3</h2>
+                    <p>São Paulo - SP</p>
+                </a>
+                <a href="#" class="reserva-unidade-link">
+                    <h2>Sushiki Vila Mariana</h2>
+                    <p>São Paulo - SP</p>
+                </a>
             </div>
         </div>
-    </section>
+    </main>
+
+    <footer class="rodape">
+        <img src="assets/images/logo.png" alt="Sushiki Sushi Logo">
+        <p>Copyright © 2024 - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- INÍCIO DO CÓDIGO JAVASCRIPT -->
+    <script>
+        // 1. Seleciona todos os links das unidades
+        const unidades = document.querySelectorAll('.reserva-unidade-link');
+
+        // 2. Passa por cada um dos links encontrados
+        unidades.forEach(unidade => {
+            // 3. Adiciona um "ouvinte de clique" a cada um
+            unidade.addEventListener('click', function(event) {
+                // Previne o comportamento padrão do link (que é rolar para o topo)
+                event.preventDefault(); 
+                
+                // Pega o nome da unidade (o texto dentro da tag <h2>)
+                const nomeUnidade = unidade.querySelector('h2').textContent;
+                
+                // Exibe um alerta para o usuário
+                alert('Você selecionou a unidade: ' + nomeUnidade + '.\n\nEm um site real, aqui apareceria o formulário para agendamento.');
+            });
+        });
+    </script>
+    <!-- FIM DO CÓDIGO JAVASCRIPT -->
+
 </body>
 </html>
