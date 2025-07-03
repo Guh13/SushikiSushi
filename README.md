@@ -19,6 +19,7 @@ Você pode acessar a versão online do site aqui:
 ## 🛠️ Tecnologias Utilizadas
 - HTML5
 - CSS3
+- JavaScript
 
 ## 📸 Screenshot
 
